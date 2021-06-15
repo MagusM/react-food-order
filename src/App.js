@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
+import Cart from './components/Cart/Cart';
 
-import Login from './components/Login/Login';
 import Home from './components/Home/Home';
-import MainHeader from './components/MainHeader/MainHeader';
+import Header from './components/Layout/Header';
+import Meals from './components/Meals/Meals';
 import AuthContext from './store/auth-context';
 
 
@@ -11,10 +12,11 @@ function App() {
 
   return (
     <React.Fragment>
-      <MainHeader isAuthenticated={ctx.isLoggedIn} onLogout={ctx.logoutHandler} />
+      <Cart />
+      <Header isAuthenticated={ctx.isLoggedIn} onLogout={ctx.logoutHandler} />
       <main>
-        {!ctx.isLoggedIn && <Login />}
-        {ctx.isLoggedIn && <Home />}
+        {/* <Home /> */}
+        <Meals />
       </main>
     </React.Fragment>
   );
