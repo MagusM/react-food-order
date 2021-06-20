@@ -11,7 +11,7 @@ const Header = (props) => {
     <React.Fragment>
       <header className={classes.header}>
         <h1>ReactMeals</h1>
-        <HeaderCartButton />
+        <HeaderCartButton onClick={props.onShowCart} />
         {/* <Navigation isLoggedIn={props.isAuthenticated} onLogout={props.onLogout} /> */}
       </header>
       <div className={classes['main-image']}>
